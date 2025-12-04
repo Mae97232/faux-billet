@@ -1,6 +1,6 @@
 /* =====================================================
    🎬 STYLE GLOBAL — VERSION ULTRA PREMIUM
-   ===================================================== */
+===================================================== */
 
 /* ------------------------------
    VARIABLES
@@ -72,7 +72,10 @@ h2 {
     color: transparent;
 }
 
-/* HERO */
+/* =====================================================
+   🎬 HERO SECTION
+===================================================== */
+
 .hero {
     padding: 130px 0 100px;
     background: radial-gradient(circle at top, #1a2035 0%, #080a10 80%);
@@ -80,6 +83,7 @@ h2 {
     overflow: hidden;
 }
 
+/* Halo haut */
 .hero::before {
     content: "";
     position: absolute;
@@ -92,6 +96,7 @@ h2 {
     filter: blur(55px);
 }
 
+/* Lumière bas */
 .hero::after {
     content: "";
     position: absolute;
@@ -119,7 +124,10 @@ h2 {
 
 .hero-tagline, .hero-text { color: var(--text-soft); }
 
-/* HERO GALLERY — FULL COVER */
+/* =====================================================
+   HERO GALLERY — OPTION A (PC = cover / MOBILE = contain)
+===================================================== */
+
 .hero-gallery-pro {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -139,12 +147,23 @@ h2 {
     cursor: zoom-in;
 }
 
-/* GRID */
+.hero-gallery-pro img:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 32px 75px rgba(0,0,0,0.75);
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
 .grid { display: grid; gap: 30px; }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-/* WHY */
+/* =====================================================
+   POURQUOI NOUS CHOISIR
+===================================================== */
+
 .why-item {
     background: linear-gradient(145deg, #1a1e2d, #121622);
     padding: 26px 24px;
@@ -159,7 +178,10 @@ h2 {
     box-shadow: var(--shadow-mid);
 }
 
-/* PACKS */
+/* =====================================================
+   PACKS
+===================================================== */
+
 .pricing-card {
     padding: 32px 28px;
     background: linear-gradient(145deg, #1c2031, #121620);
@@ -167,13 +189,24 @@ h2 {
     border: 1px solid rgba(255,255,255,0.06);
     box-shadow: var(--shadow-soft);
     transition: var(--transition);
+    position: relative;
     overflow: hidden;
 }
 
-.pricing-card.featured {
-    border: 1px solid var(--gold-2);
-    background: linear-gradient(135deg, #242a40, #171c2c);
-    box-shadow: 0 0 40px rgba(246,197,96,0.28), var(--shadow-mid);
+.pricing-card::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(246,197,96,0.18), transparent 70%);
+    filter: blur(35px);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-deep);
 }
 
 .pricing-card .price {
@@ -182,7 +215,16 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* PRODUIT DETAIL */
+.pricing-card.featured {
+    border: 1px solid var(--gold-2);
+    background: linear-gradient(135deg, #242a40, #171c2c);
+    box-shadow: 0 0 40px rgba(246,197,96,0.28), var(--shadow-mid);
+}
+
+/* =====================================================
+   PRODUIT DETAIL (OPTION A)
+===================================================== */
+
 .product-detail {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -201,7 +243,18 @@ h2 {
     cursor: zoom-in;
 }
 
-/* CONTACT */
+.product-images img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-deep);
+}
+
+/* WARNINGS */
+.warning-list { color: var(--danger); }
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
 #contact {
     background: linear-gradient(135deg, #0c0e15, #07080e);
     padding: 90px 0;
@@ -209,7 +262,40 @@ h2 {
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* FAQ */
+.contact-block {
+    background: rgba(255,255,255,0.03);
+    padding: 28px 26px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.07);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+    max-width: 550px;
+    margin-top: 20px;
+}
+
+.contact-phone {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-1);
+    text-decoration: none;
+}
+
+.btn-contact-large {
+    display: block;
+    margin-top: 25px;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--gold-1), var(--gold-2));
+    color: #1a1a1a;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* =====================================================
+   FAQ
+===================================================== */
+
 .faq-item {
     background: linear-gradient(145deg, #1a1d2b, #141722);
     padding: 22px 20px;
@@ -220,7 +306,17 @@ h2 {
     transition: var(--transition);
 }
 
-/* FOOTER */
+.faq-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+}
+
+.faq-item h3 { color: var(--gold-1); }
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
 .footer {
     background: #07080d;
     padding-top: 60px;
@@ -233,60 +329,49 @@ h2 {
     gap: 40px;
 }
 
-/* =====================================================
-   RESPONSIVE MOBILE — VERSION PRO
-   ===================================================== */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-soft);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
 
-/* TABLETTE */
+/* =====================================================
+   RESPONSIVE MOBILE FIX  — OPTION A
+   (Mobile = images ENTIERES)
+===================================================== */
+
 @media (max-width: 950px) {
     .hero-content { grid-template-columns: 1fr; }
-    .grid-3 { grid-template-columns: 1fr; }
     .hero-gallery-pro { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* MOBILE */
-@media (max-width: 650px) {
+/* 📱 MOBILE : JAMAIS D’IMAGE COUPÉE */
+@media (max-width: 700px) {
 
-    h1 { font-size: 1.9rem; }
-    h2 { font-size: 1.8rem; }
-
-    .section { padding: 50px 0; }
-
-    /* galerie mobile  */
     .hero-gallery-pro {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
     }
 
-    .hero-gallery-pro img {
-        height: 220px !important;
-    }
-
-    /* packs = 1 colonne propre */
-    .grid-3 {
-        grid-template-columns: 1fr !important;
-    }
-
-    .pricing-card {
-        padding: 22px 20px !important;
-    }
-
-    .pricing-card .price {
-        font-size: 1.4rem !important;
-    }
-
-    /* images produit */
+    .hero-gallery-pro img,
     .product-images img {
-        height: 220px !important;
+        height: auto;
+        max-height: none;
+        object-fit: contain !important;
+        object-position: center;
+        background: #000;
+        padding: 0;
+        border-radius: 18px;
     }
 
-    /* éviter tout dépassement */
-    p, li, h3 {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
+    h1 { font-size: 2.1rem; }
+    .section { padding: 60px 0; }
 }
 
-/* LIGHTBOX */
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
 .lightbox-overlay {
     position: fixed;
     top: 0;
@@ -299,6 +384,15 @@ h2 {
     align-items: center;
     z-index: 9999;
     backdrop-filter: blur(4px);
+    animation: fadeIn 0.25s ease-out;
+}
+
+.lightbox-overlay img {
+    max-width: 92%;
+    max-height: 88%;
+    border-radius: 14px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.70);
+    animation: zoomIn 0.25s ease-out;
 }
 
 .lightbox-close {
@@ -308,4 +402,26 @@ h2 {
     font-size: 2.2rem;
     color: white;
     cursor: pointer;
+    font-weight: 600;
+    z-index: 10000;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: 0.2s ease;
 }
+
+.lightbox-close:hover {
+    color: var(--gold-2);
+    transform: scale(1.15);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.click-zoom { cursor: zoom-in; }
+
