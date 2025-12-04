@@ -222,7 +222,7 @@ h2 {
 }
 
 /* =====================================================
-   PRODUIT DETAIL (OPTION A)
+   PRODUIT DETAIL
 ===================================================== */
 
 .product-detail {
@@ -337,16 +337,38 @@ h2 {
 }
 
 /* =====================================================
-   RESPONSIVE MOBILE FIX  — OPTION A
-   (Mobile = images ENTIERES)
+   RESPONSIVE MOBILE FIX  — ULTRA IMPORTANT
 ===================================================== */
 
-@media (max-width: 950px) {
-    .hero-content { grid-template-columns: 1fr; }
-    .hero-gallery-pro { grid-template-columns: repeat(2, 1fr); }
+* {
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
-/* 📱 MOBILE : JAMAIS D’IMAGE COUPÉE */
+/* PACKS = toujours 1 colonne en mobile */
+@media (max-width: 700px) {
+    .grid-3, .grid-2, .product-detail {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pricing-card {
+        width: 100%;
+        padding: 22px 18px;
+        overflow: visible !important;
+    }
+}
+
+/* LISTES */
+li {
+    margin-left: 18px;
+    padding-left: 4px;
+    line-height: 1.55;
+}
+
+/* TEXTES LISIBLES */
+p, li { font-size: 1rem; }
+
+/* GALLERY MOBILE FIX — images jamais coupées */
 @media (max-width: 700px) {
 
     .hero-gallery-pro {
@@ -358,13 +380,10 @@ h2 {
         height: auto;
         max-height: none;
         object-fit: contain !important;
-        object-position: center;
         background: #000;
-        padding: 0;
-        border-radius: 18px;
     }
 
-    h1 { font-size: 2.1rem; }
+    h1 { font-size: 2rem; }
     .section { padding: 60px 0; }
 }
 
@@ -424,4 +443,3 @@ h2 {
 }
 
 .click-zoom { cursor: zoom-in; }
-
