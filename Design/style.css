@@ -125,7 +125,7 @@ h2 {
 .hero-tagline, .hero-text { color: var(--text-soft); }
 
 /* =====================================================
-   HERO GALLERY — OPTION A (PC = cover / MOBILE = contain)
+   HERO GALLERY — OPTION A
 ===================================================== */
 
 .hero-gallery-pro {
@@ -222,7 +222,7 @@ h2 {
 }
 
 /* =====================================================
-   PRODUIT DETAIL (OPTION A)
+   PRODUIT DETAIL
 ===================================================== */
 
 .product-detail {
@@ -337,39 +337,14 @@ h2 {
 }
 
 /* =====================================================
-   📱 FIX MOBILE — AJOUT MINIMAL (TEXTE QUI DÉBORDE)
+   RESPONSIVE FIX — MOBILE IMAGES LARGE & ENTIÈRES
 ===================================================== */
 
-* {
-    overflow-wrap: break-word;
+@media (max-width: 950px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-gallery-pro { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Fix des packs qui débordent */
-@media (max-width: 700px) {
-    .grid-3,
-    .grid-2,
-    .product-detail {
-        grid-template-columns: 1fr !important;
-    }
-
-    .pricing-card {
-        width: 100%;
-        overflow: visible !important;
-        padding: 25px 20px;
-    }
-}
-
-/* Fix lisibilité listes et textes */
-li, p {
-    font-size: 1rem;
-    line-height: 1.55;
-}
-
-/* =====================================================
-   📱 FIX MOBILE — IMAGES JAMAIS COUPÉES
-===================================================== */
-
-/* 📱 MOBILE : JAMAIS D’IMAGE COUPÉE */
 @media (max-width: 700px) {
 
     .hero-gallery-pro {
@@ -379,10 +354,9 @@ li, p {
     .hero-gallery-pro img,
     .product-images img {
         width: 100%;
-        height: auto !important;  /* garde la hauteur réelle */
-        object-fit: cover !important; /* redevient GRAND comme avant */
-        object-position: top center;  /* montre bien le haut (numéro visible) */
-
+        height: 360px !important;
+        object-fit: contain !important;
+        object-position: center;
         background: #000;
         padding: 0;
         border-radius: 18px;
@@ -391,7 +365,6 @@ li, p {
     h1 { font-size: 2.1rem; }
     .section { padding: 60px 0; }
 }
-
 
 /* =====================================================
    LIGHTBOX
