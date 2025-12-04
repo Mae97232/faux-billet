@@ -222,7 +222,7 @@ h2 {
 }
 
 /* =====================================================
-   PRODUIT DETAIL
+   PRODUIT DETAIL (OPTION A)
 ===================================================== */
 
 .product-detail {
@@ -337,38 +337,38 @@ h2 {
 }
 
 /* =====================================================
-   RESPONSIVE MOBILE FIX  — ULTRA IMPORTANT
+   📱 FIX MOBILE — AJOUT MINIMAL (TEXTE QUI DÉBORDE)
 ===================================================== */
 
 * {
-    max-width: 100%;
     overflow-wrap: break-word;
 }
 
-/* PACKS = toujours 1 colonne en mobile */
+/* Fix des packs qui débordent */
 @media (max-width: 700px) {
-    .grid-3, .grid-2, .product-detail {
+    .grid-3,
+    .grid-2,
+    .product-detail {
         grid-template-columns: 1fr !important;
     }
 
     .pricing-card {
         width: 100%;
-        padding: 22px 18px;
         overflow: visible !important;
+        padding: 25px 20px;
     }
 }
 
-/* LISTES */
-li {
-    margin-left: 18px;
-    padding-left: 4px;
+/* Fix lisibilité listes et textes */
+li, p {
+    font-size: 1rem;
     line-height: 1.55;
 }
 
-/* TEXTES LISIBLES */
-p, li { font-size: 1rem; }
+/* =====================================================
+   📱 FIX MOBILE — IMAGES JAMAIS COUPÉES
+===================================================== */
 
-/* GALLERY MOBILE FIX — images jamais coupées */
 @media (max-width: 700px) {
 
     .hero-gallery-pro {
@@ -377,13 +377,13 @@ p, li { font-size: 1rem; }
 
     .hero-gallery-pro img,
     .product-images img {
-        height: auto;
-        max-height: none;
+        height: auto !important;
+        max-height: none !important;
         object-fit: contain !important;
         background: #000;
     }
 
-    h1 { font-size: 2rem; }
+    h1 { font-size: 2.1rem; }
     .section { padding: 60px 0; }
 }
 
