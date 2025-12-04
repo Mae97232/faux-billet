@@ -422,3 +422,29 @@ h2 {
 }
 
 .click-zoom { cursor: zoom-in; }
+
+/* =====================================================
+   📱 MOBILE — PACKS EN CARTES EMPILÉES
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .pricing-cards-container,
+    .grid-3 {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+    }
+
+    .pricing-card {
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 30px 24px !important;
+        border-radius: 20px !important;
+    }
+
+    .pricing-card h3,
+    .pricing-card .price {
+        text-align: center !important;
+    }
+}
